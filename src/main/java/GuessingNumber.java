@@ -13,8 +13,11 @@ public class GuessingNumber {
 
         StringBuilder guessingInputHistoryLine = new StringBuilder();
 
+        int tryingCounts = 1;
+
         while (true) {
             int inputNumber = scanner.nextInt();
+            tryingCounts += 1;
 
             if (inputNumber > guessingNumber) {
                 guessingInputHistoryLine.append(" X < ").append(inputNumber).append(";");
@@ -29,6 +32,7 @@ public class GuessingNumber {
             }
 
             System.out.println("Вы угадали! Было загадано число " + guessingNumber);
+            System.out.printf("Количество попыток %d", tryingCounts - 1);
             break;
         }
     }
